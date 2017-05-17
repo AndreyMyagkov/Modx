@@ -6,3 +6,4 @@ Snippets, chuncks, plugins for MODX EVO (Evolution CMS)
 * [**monthToPeriods**](https://github.com/AndreyMyagkov/Modx/tree/master/snippets/monthToPeriods) — Преобразует список порядковых номеров месяцев в периоды в тектовом виде
 * [**declension**](https://github.com/AndreyMyagkov/Modx/tree/master/snippets/declension) — Склонение окончания после числительных
 * [**dayNights**](https://github.com/AndreyMyagkov/Modx/tree/master/snippets/dayNights) — Продолжительность события в днях и ночах
+* [**getImgFromPSSGallery**](https://github.com/AndreyMyagkov/Modx/tree/master/snippets/getImgFromPSSGallery) - Путь к произвольной фото из произвольной галереи PSSGallery
