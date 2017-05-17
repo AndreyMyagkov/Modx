@@ -1,0 +1,55 @@
+<?php
+/**
+* Путь к произвольной фото из PSSGallery
+* @param id {int} - id страницы с галереей
+* @param index {int} - порядковый номер фото (по умолчпнию 1)
+* @param type {string} - возращать путь к big или thumb фото (по умолчанию big)
+* @param noimage {string} - путь noimage картинке, если фото из галереи не найдено и нужена не стандартная картинка noimage
+* @return string - путь к картинке
+* Пример
+* [[getImgFromPSSGallery? &id=`5`]]
+*/
+
+
+$id=(isset($id)?trim($id):0);				// id галереи
+$index=(isset($index)?$index:1); 	// порядковый номер картинки
+$type=(isset($type)?$type:'big');	// big или thumb
+$noimage=(isset($noimage)?$noimage:'');	// 
+
+
+
+global $modx; 
+$index--;
+
+$rs=$modx->db->select('*', $modx->getFullTableName('pss_gallery'), "document_id='$id' AND visible=1 ORDER BY position ASC ");
+
+if ($modx->db->getRecordCount($rs) > 0) {
+	$images=array();
+	while($row = $modx->db->getRow($rs)){
+		$images[] = array(
+			'id' => $row['id'],
+			'alt' => $row['alt'],
+			'title' => $row['title'],
+			'position' => $row['position'],
+			'url_thumbnail_image' => $row['url_thumbnail_image'],
+			'url_gallery_image' => $row['url_gallery_image'],
+			'url_original_image' => $row['url_original_image']
+		);
+	}
+	
+	if(is_array($images[$index])){
+		if($type=='big'){
+			return $images[$index]['url_gallery_image'];
+		} else if ($type=='original'){
+			return $images[$index]['url_original_image'];
+		} else {
+			return $images[$index]['url_thumbnail_image'];
+		}
+		
+	} else {
+		return $noimage;	
+	}
+} else {
+	return $noimage;
+}
+?>
