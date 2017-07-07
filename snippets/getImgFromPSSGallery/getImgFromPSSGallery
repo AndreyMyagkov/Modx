@@ -13,7 +13,7 @@
 
 $id=(isset($id)?trim($id):0);				// id галереи
 $index=(isset($index)?$index:1); 	// порядковый номер картинки
-$type=(isset($type)?$type:'big');	// big или thumb
+$type=(isset($type)?$type:'original');	// big или thumb
 $noimage=(isset($noimage)?$noimage:'');	// 
 
 
