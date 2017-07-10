@@ -25,10 +25,13 @@ if($date){
                 $actualDate[]=$dateArr[$key];
             }
             
-        }
+        } else {
+			$actualDate[]=$dateArr[$key];
+		}
     }
     
 }
 
 
 return join(', ',$actualDate);
+
