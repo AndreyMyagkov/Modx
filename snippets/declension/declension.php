@@ -1,5 +1,21 @@
 <?php
 /**
+* declension
+*
+* Склонение окончания после числительных
+*
+* @category    snippet
+* @version     1.0
+* @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+* @internal    @properties
+* @internal    @modx_category Helpers
+* @internal    @installset base
+* @reportissues https://github.com/AndreyMyagkov/Modx/tree/master/snippets/declension
+* @author      Created By AndreyMyagkov
+* @lastupdate  16/05/2017
+*/
+
+/**
 * Склонение окончания после числительных
 * @param num {int} - числительное
 * @param words {string} - варианты написания для количества 1, 2 и 5
